@@ -1,9 +1,12 @@
 /*
  * @Author: BlackFrog
  * @Date: 2022-06-12 20:07:44
- * @LastEditTime: 2022-06-12 21:09:48
+ * @LastEditTime: 2022-06-12 21:37:43
  * @Description: 
- * 
+ * https://wangpengcheng.github.io/2019/05/17/cplusplus_theadpool/
+ * https://www.cnblogs.com/ailumiyana/p/10016965.html#%E7%AE%80%E4%BB%8B
+ * https://github.com/kanade2010/ThreadPool
+ * https://www.cnblogs.com/lzpong/p/6397997.html
  * Copyright (c) 2022 by BlackFrog, All Rights Reserved. 
  */
 
@@ -57,7 +60,7 @@ private:
         }
 
         ~ThreadWorker() {
-            
+
         }
     };
 
