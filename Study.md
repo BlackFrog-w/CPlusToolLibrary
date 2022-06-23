@@ -4,4 +4,6 @@
 
 3. goto用法
 
-4.
+4.Linux文本复制命令
+https://blog.51cto.com/u_15065850/2581738
+

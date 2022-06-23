@@ -1,9 +1,13 @@
 /*
  * @Author: BlackFrog
  * @Date: 2022-06-23 14:07:36
- * @LastEditTime: 2022-06-23 14:44:26
+ * @LastEditTime: 2022-06-23 16:43:13
  * @Description: 
- * 
+ * 本示例参考链接：
+ * https://blog.csdn.net/weixin_45358392/article/details/118809107
+ * Eigen中基本和常用函数：
+ * https://blog.csdn.net/u010307048/article/details/108747539
+ * https://zhuanlan.zhihu.com/p/139118094
  * Copyright (c) 2022 by BlackFrog, All Rights Reserved. 
  */
  
@@ -17,10 +21,22 @@ double angle_of_2_vector(Eigen::Vector3d v1, Eigen::Vector3d v2)
 {
     if(!(v1.norm() > 0 && v2.norm() > 0))
         return std::nan("");
+    //归一化
+    //
     v1.normalize();
+    cout << "v1 is: " << v1(0) << ", "<< v1(1) << ", " << v1(2) << " " << endl; 
+    cout << "v2 is: " << v2(0) << ", "<< v2(1) << ", " << v2(2) << " " << endl; 
     v2.normalize();
+    cout << "data.norm() = " << v2.norm() << endl;
+    cout << "v2 is: " << v2(0) << ", "<< v2(1) << ", " << v2(2) << " " << endl; 
+    //dot（点积）
+    //x1*x2 + y1*y2 + z1*z3
+    //点积的结果代表cos？
+    //https://baike.baidu.com/item/%E7%82%B9%E7%A7%AF/9648528?fr=aladdin
     double cos = v1.dot(v2);
+    cout << "cos is: " << cos << " " << endl; 
     double sin = v1.cross(v2).z();
+    cout << "sin is: " << sin << " " << endl; 
     if (cos > 1)
         cos = 1;
     if (cos < -1)
@@ -29,7 +45,11 @@ double angle_of_2_vector(Eigen::Vector3d v1, Eigen::Vector3d v2)
         sin = 1;
     if (sin < -1)
         sin = -1;
+    //acos反余弦
+    //https://blog.csdn.net/yuxing55555/article/details/121533966
+    //theta是弧度值
     double theta = acos(cos);
+    cout << "theta is: " << theta << " " << endl; 
     if (sin < 0) theta = -theta;
     while (theta > M_PI) theta -= 2 * M_PI;
     while (theta < -M_PI) theta += 2 * M_PI;
@@ -136,8 +156,11 @@ int main( int argc, char** argv )
     Eigen::Vector3d v3dZ = Eigen::Vector3d::UnitZ();
     cout << v3dZ(0) << v3dZ(1) << v3dZ(2) << endl; 
 
+    
+    Eigen::Vector3d v3d_temp(0.9529534741802186, -0.3031166047049411, 0.0);
+    Eigen::Vector3d v3d_temp2(-0.837133289901815, 0.5469989533245595, 0.0);
 
-    auto diff_1 = angle_of_2_vector(v3dX, v3dY);
+    auto diff_1 = angle_of_2_vector(v3dX, v3d_temp2);
     cout << "diff_1 is: " << diff_1 << endl;
 
     return 0;
