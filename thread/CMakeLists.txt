@@ -4,6 +4,8 @@ project(thread VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
+set(CMAKE_CXX_FLAGS "-pthread")
+
 add_executable(thread main.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
