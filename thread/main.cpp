@@ -1,7 +1,7 @@
 /*
  * @Author: BlackFrog
  * @Date: 2022-06-25 16:35:51
- * @LastEditTime: 2022-06-26 01:05:19
+ * @LastEditTime: 2022-06-26 14:29:34
  * @Description: 
  * 知识点1：
  * 当一个while循环不退出时，会占用多少CPU？测试发现占用一个核的100%，当前可能会运行在不同的核上，但是总的占用率是一个
@@ -38,21 +38,21 @@ void add(int a, int t_id) {
         //sleep(1);
 
         //休眠单位：ms
-        std::chrono::milliseconds dura(2000);
-        std::this_thread::sleep_for(dura);
+        //std::chrono::milliseconds dura(2000);
+        //std::this_thread::sleep_for(dura);
         
         //get_id()返回类型为thread::id，无法转换到基础类型int
-        std::thread::id id = std::this_thread::get_id();
-        std::cout << "thread id is: " << id << ", " << std::to_string(t_id) << std::endl;
+        //std::thread::id id = std::this_thread::get_id();
+        //std::cout << "thread id is: " << id << ", " << std::to_string(t_id) << std::endl;
 
         //让CPU来调度，和sleep类似
         //std::this_thread::yield();
 
         a++;
-        std::cout << "a is: " << a << std::endl;
+        //std::cout << "a is: " << a << std::endl;
         end_time1 = std::chrono::system_clock::now();
         auto dura2 = (std::chrono::duration_cast<std::chrono::milliseconds>(end_time1 - start_time1)).count();
-        std::cout << "示例1 耗时(time): " << dura2 << " ms" << std::endl;
+        //std::cout << "示例1 耗时(time): " << dura2 << " ms" << std::endl;
     }
     
 }
@@ -65,8 +65,10 @@ int main(int, char**) {
     //t1.join();
 
     std::thread t2(add, a, 2);
+    //std::thread t3(add, a, 3);
     t1.join();
     t2.join();
+    //t3.join();
 
     std::cout << "Hello, world!\n";
 }
