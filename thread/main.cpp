@@ -38,8 +38,8 @@ void add(int a, int t_id) {
         //sleep(1);
 
         //休眠单位：ms
-        //std::chrono::milliseconds dura(2000);
-        //std::this_thread::sleep_for(dura);
+        std::chrono::milliseconds dura(2000);
+        std::this_thread::sleep_for(dura);
         
         //get_id()返回类型为thread::id，无法转换到基础类型int
         //std::thread::id id = std::this_thread::get_id();
