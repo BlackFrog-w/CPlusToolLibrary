@@ -17,4 +17,9 @@ cm ..\std_algorithm\ \
 ::powershell -and cd build -and ls
 ::-and命令感觉不能用
 ::(cd build) -and (rm -r *) -and (cm ..\std_algorithm\)  -and (mk) -and (.\std_algorithm.exe)
-cd build; rm -r *; cm ..\Chapter3\Section2\;mk;./string
+cd build; 
+rm -r *; 
+cm ..\cmake_test\; 
+mk;
+echo "------------------------------------*************************************------------------------------------" 
+.\cmake_test.exe
