@@ -23,6 +23,16 @@ message(STATUS "CMAKE_CURRENT_LIST_DIR is:  " ${CMAKE_CURRENT_LIST_DIR})
 #set
 #set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin),是用于定义变量的，EXECUTABLE_OUT_PATH和PROJECT_SOURCE_DIR是CMake自带的预定义变量
 #cmake自带的预定义变量有哪些？
+set(SRC_LIST main.cpp src/fun.h)
+message(STATUS "SRC_LIST is: " ${SRC_LIST})
+#在SRC_LIST后追加
+set(SRC_LIST ${SRC_LIST} src/fun2.h)
+message(STATUS "SRC_LIST2 is: " ${SRC_LIST})
+
+#设置输出目录
+#set(EXECUTABLE_OUTPUT_PATH ${CURRENT_SOURCE_DIR}/../exe)
+#message(STATUS "exe path is: " ${EXECUTABLE_OUTPUT_PATH})
+
 
 #list
 
