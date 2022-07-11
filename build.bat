@@ -15,6 +15,6 @@ cm ..\std_algorithm\ \
 && .\std_algorithm.exe
 :start
 ::powershell -and cd build -and ls
-(cd build) -and (rm -r *) -and (cm ..\std_algorithm\)  -and (mk) -and (.\std_algorithm.exe)
-
-
+::-and命令感觉不能用
+::(cd build) -and (rm -r *) -and (cm ..\std_algorithm\)  -and (mk) -and (.\std_algorithm.exe)
+cd build; rm -r *; cm ..\Chapter3\Section2\;mk;./string
