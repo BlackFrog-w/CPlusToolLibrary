@@ -41,6 +41,9 @@ message(STATUS "SRC_LIST2 is: " ${SRC_LIST})
 
 #aux_source_directory 
 
+#预宏定义
+add_definitions(-DTEST)
+
 #find_package
 #https://blog.csdn.net/weixin_39393741/article/details/85070299
 
@@ -66,6 +69,14 @@ message(">>> include_dirs = ${dirs}") #打印一下目录情况
 #find_library
 
 #target_link_libraries
+
+if(WIN32)
+    message(STATUS “------------------ This operating system is Windows.”)
+elseif(UNIX)
+    message(STATUS “------------------ This operating system is Linux.”)
+elseif(APPLE)
+    message(STATUS “------------------ This operating system is APPLE.”)
+endif(WIN32)
 
 
 #file
