@@ -70,6 +70,11 @@ message(">>> include_dirs = ${dirs}") #打印一下目录情况
 
 #file
 
+#link_directories
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
+#链接so
+link_libraries(libload_so.dll)
+
 add_executable(cmake_test main.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
