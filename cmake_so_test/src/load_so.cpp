@@ -8,6 +8,7 @@
  * Copyright (c) 2022 by BlackFrog, All Rights Reserved. 
  */
 #include <iostream>
+#include "load_so.h"
 
 void say_hello(){
     std::cout << "Hello, from load_so!\n";

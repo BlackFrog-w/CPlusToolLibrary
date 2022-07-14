@@ -42,7 +42,8 @@ message(STATUS "SRC_LIST2 is: " ${SRC_LIST})
 #aux_source_directory 
 
 #预宏定义
-add_definitions(-DTEST)
+# https://blog.csdn.net/fb_941219/article/details/107376017
+add_definitions(-DTEST_DEBUG)
 
 #find_package
 #https://blog.csdn.net/weixin_39393741/article/details/85070299
@@ -56,6 +57,7 @@ add_definitions(-DTEST)
 #https://www.jianshu.com/p/e7de3de1b0fa
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/
 )
 
 #打印当前include目录
@@ -82,9 +84,13 @@ endif(WIN32)
 #file
 
 #link_directories
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/libs)
 #链接so
 link_libraries(libload_so.dll)
+
+
+#设置可执行文件输出目录
+# set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
 add_executable(cmake_test main.cpp)
 
