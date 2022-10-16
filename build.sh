@@ -2,7 +2,7 @@
 ###
  # @Author: BlackFrog
  # @Date: 2022-06-25 16:45:42
- # @LastEditTime: 2022-08-19 20:49:28
+ # @LastEditTime: 2022-08-20 12:58:01
  # @Description: 
  # 
  # Copyright (c) 2022 by BlackFrog, All Rights Reserved. 
@@ -19,6 +19,6 @@ ls
  # && 的作用是保证上一条命令执下一条命令，如果上一条命令执行报错，那么将终止执行
 ###
 echo "--------------编译&&运行------------------"
-cmake ../ipc/pipe/ \
+cmake ../shared_ptr/ \
 && make \
-&& ./ipc
+&& ./shared_ptr
