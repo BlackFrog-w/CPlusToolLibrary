@@ -1,7 +1,7 @@
 /*
  * @Author: BlackFrog
  * @Date: 2022-08-19 20:45:03
- * @LastEditTime: 2022-08-19 23:01:16
+ * @LastEditTime: 2022-10-17 21:52:11
  * @Description: 
  * 进程间通信方式：管道
  * 
@@ -39,6 +39,6 @@ int main(int argc, char *argv[])
 	read(pipefd[0], buf, 10); 
 	printf("buf=%s\n", buf); 
  
-    sleep(20);
+    sleep(2);
 	return 0; 
 } 

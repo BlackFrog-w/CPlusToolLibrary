@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/shared_mem_client.dir/client.cpp.o  -o shared_mem_client 
