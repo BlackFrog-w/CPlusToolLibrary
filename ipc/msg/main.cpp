@@ -1,9 +1,9 @@
 /*
  * @Author: BlackFrog
  * @Date: 2022-08-19 20:45:03
- * @LastEditTime: 2022-08-20 11:25:26
+ * @LastEditTime: 2022-10-18 22:10:47
  * @Description: 
- * 进程间通信方式：管道
+ * 进程间通信方式：消息队列
  * 
  * Copyright (c) 2022 by BlackFrog, All Rights Reserved. 
  */

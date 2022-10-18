@@ -1,9 +1,9 @@
 /*
  * @Author: BlackFrog
  * @Date: 2022-10-17 22:15:28
- * @LastEditTime: 2022-10-17 22:19:49
+ * @LastEditTime: 2022-10-18 22:03:11
  * @Description: 
- * 
+ * 参考链接：https://blog.yanjingang.com/?p=4503
  * Copyright (c) 2022 by BlackFrog, All Rights Reserved. 
  */
 /**
@@ -24,11 +24,17 @@ int main() {
         // cout << "input content: ";
         // fgets(shm.mem, shm.size(), stdin);
         printf("input content: ");
+
+        //作用是什么？
         fflush(stdout);
+        
         ssize_t n = read(0, shm.mem, 4096 - 1);  //从标准输入获取消息
+        
         if (n > 0) {
+            printf("n is: %d \n", n);
             shm.mem[n - 1] = '\0';  //过滤掉从标准输入中获取的换行
         }
+
         cout << "get share memory content: " << shm.mem << endl;
     }
 

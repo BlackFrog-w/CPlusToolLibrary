@@ -14,7 +14,7 @@
 #include <iostream>
 
 // 共享文件路径，client和server必须指向同一个路径
-#define PATHNAME "."
+#define PATHNAME "/home/blackfrog/cplus/CPlusToolLibrary/ipc/"
 #define PROCID 'b' //0x6666
 #define MEMSIZE 4096*1
 
@@ -27,12 +27,16 @@ namespace ipc {
         private:
             // key
             int key_;
+
             // 共享内存ID
             int shmid_;
+            
             // 共享内存大小
             int size_;
+            
             // 创建共享内存
             int create_share_memory();
+        
         public:
             ShareMemory();
             ShareMemory(const size_t m_size);
@@ -65,6 +69,7 @@ namespace ipc {
     
     // 创建共享内存
     int ShareMemory::create_share_memory(){
+
         // 创建key, 以实现非亲缘关系进程间通信
         key_ = ftok(PATHNAME, PROCID);  
         if (key_ == -1) {
@@ -86,6 +91,7 @@ namespace ipc {
         // 创建共享内存
         shmid_ = shmget(key_, this->size(), IPC_CREAT | 0777);    // 以ftok创建的key，需要IPC_CREAT参数 
         //shmid_ = shmget(IPC_PRIVATE, 128, 0777);   // 在内核中生成共享内存的对象；相当于缓存，只能实现有亲缘关系进程间通信
+        
         if (shmid_ == -1) {
             cout << "shmget create share memory fail!" << endl;
             return -3;

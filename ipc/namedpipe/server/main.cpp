@@ -1,9 +1,9 @@
 /*
  * @Author: BlackFrog
  * @Date: 2022-10-17 21:59:07
- * @LastEditTime: 2022-10-17 22:07:07
+ * @LastEditTime: 2022-10-18 20:56:38
  * @Description: 
- * 
+ * 参考链接：https://blog.yanjingang.com/?p=4503
  * Copyright (c) 2022 by BlackFrog, All Rights Reserved. 
  */
 
@@ -25,8 +25,9 @@
 int main() {
     std::string name = "/home/blackfrog/cplus/CPlusToolLibrary/ipc/myfifo";
 
-    // 创建一个存取权限为0666的命名管道
+    // 刪除文件
     unlink(name.c_str());
+    // 创建一个存取权限为0666的命名管道
     int namepipe = mkfifo(name.c_str(), S_IFIFO | 0666);  
     if (namepipe == -1) {
         perror("mkfifo fail!");
@@ -43,6 +44,7 @@ int main() {
     char buf[1024];
     while (1) {
         //为什么只有当client进程运行时，才会打印“sendto fifo:”？？？
+        // 阻塞的？
         printf("sendto fifo: ");
         fflush(stdout);
         ssize_t n = read(0, buf, sizeof(buf) - 1);  //从标准输入获取消息
