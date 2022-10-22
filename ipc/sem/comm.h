@@ -25,18 +25,25 @@ union semun
 };
 //信号量是创建还是获取在于semget函数参数flag的设置
 static int CommSemid(int nums, int flags);
+
 //创建信号量
 int CreatSemid(int nums);
-//获取已经创建的信号量
+
+ //获取已经创建的信号量
 int GetSemid(int nums);
+
 //初始化信号量
 int InitSem(int semid, int which, int _val);
+
 //PV操作在于它_op的值
 static int SemPV(int semid, int which, int _op);
+
 //P操作
 int P(int semid, int which, int _op);
 //V操作
+
 int V(int semid, int which, int _op);
+
 //由于（System V通信方式）信号量生命周期随内核,所以要销毁信号量
 int Destory(int semid);
 #endif

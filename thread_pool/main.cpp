@@ -1,9 +1,10 @@
 /*
  * @Author: BlackFrog
  * @Date: 2022-06-12 19:26:16
- * @LastEditTime: 2022-06-12 21:15:36
+ * @LastEditTime: 2022-10-22 23:19:23
  * @Description: 
- * 
+ * 参考链接：
+ * https://wangpengcheng.github.io/2019/05/17/cplusplus_theadpool/
  * Copyright (c) 2022 by BlackFrog, All Rights Reserved. 
  */
 #include <iostream>
