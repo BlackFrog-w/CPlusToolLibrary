@@ -1,9 +1,12 @@
 /*
  * @Author: BlackFrog
  * @Date: 2022-10-23 00:00:18
- * @LastEditTime: 2022-10-24 23:45:39
+ * @LastEditTime: 2022-10-24 23:58:13
  * @Description: 
  * 快速排序
+ * 参考链接：
+ * https://interviewguide.cn/notes/03-hunting_job/03-algorithm/01-basic-algorithm/02-04-%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F.html
+ * 
  * Copyright (c) 2022 by BlackFrog, All Rights Reserved. 
  */
 #include <iostream>
